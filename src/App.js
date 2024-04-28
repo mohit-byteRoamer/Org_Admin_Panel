@@ -12,8 +12,8 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <SignIn />
-      {/* <AppLayout /> */}
+      {/* <SignIn /> */}
+      <AppLayout />
     </div>
   );
 }
