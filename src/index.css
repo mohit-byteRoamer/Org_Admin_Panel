@@ -1,0 +1,134 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.ant-menu-item:hover {
+  background-color: #f0f0f0; /* Change hover background color */
+}
+
+.ant-menu .ant-menu-item-selected {
+  background-color: #e6f8fa; /* Change selected item background color */
+  color: #00acb1;
+}
+
+.ant-menu-light .ant-menu-submenu-selected > .ant-menu-submenu-title {
+  color: #00acb1;
+}
+
+.ant-steps .ant-steps-item-finish .ant-steps-item-icon {
+  background-color: #e6f8fa; /* Change selected item background color */
+  border-color: #e6f8fa;
+}
+
+.ant-steps .ant-steps-item-process .ant-steps-item-icon {
+  background-color: #00acb1;
+  border-color: #00acb1;
+}
+
+.ant-select-dropdown .ant-select-item-option-selected {
+  background-color: #e6f8fa !important;
+}
+
+.ant-input:focus {
+  border-color: #00acb1; /* Change the active border color */
+}
+.ant-input:hover {
+  border-color: #00acb1 !important; /* Change the active border color */
+}
+
+.projectTextarea:focus {
+  border: 1px solid #00acb1 !important; /* Change the active border color */
+}
+.ant-input:hover {
+  border-color: #00acb1 !important; /* Change the active border color */
+}
+
+.ant-select-selector:hover,
+.ant-select-selector:focus-within {
+  border: 1px solid #00acb1 !important;
+}
+
+.ant-input-outlined:focus-within {
+  border: 1px solid #00acb1 !important;
+}
+
+.ant-input-outlined:hover {
+  border: 1px solid #00acb1 !important;
+}
+
+.ant-steps
+  .ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title::after {
+  background-color: #00acb1;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #00acb1;
+  border-color: #00acb1;
+}
+.ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner,
+.ant-checkbox-input:focus + .ant-checkbox-inner {
+  border-color: #00acb1 !important;
+}
+
+.ant-checkbox-indeterminate .ant-checkbox-inner::after {
+  background-color: #00acb1;
+}
+
+.ant-picker-outlined:focus-within {
+  border-color: #00acb1;
+}
+
+.ant-picker-outlined:hover {
+  border-color: #00acb1;
+}
+
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-selected:not(
+    .ant-picker-cell-disabled
+  )
+  .ant-picker-cell-inner {
+  background-color: #00acb1;
+  border-color: #00acb1;
+}
+
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-today
+  .ant-picker-cell-inner::before {
+  border-color: #00acb1;
+}
+
+a:hover {
+  color: #00acb1;
+}
+
+.ant-btn-primary {
+  background-color: #00acb1;
+}
+/* Change hover background color for primary buttons */
+.ant-btn-primary:hover,
+.ant-btn-primary:focus,
+.ant-btn-primary:active {
+  background-color: #00acb1 !important; /* Use !important to ensure style priority */
+}
+
+.ant-picker-dropdown
+  .ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell-selected
+  .ant-picker-time-panel-cell-inner {
+  background-color: #e6f8fa !important; /* Use !important to ensure style priority */
+}
+
+.ant-spin{
+  color: #00acb1;
+}
+.ant-spin .ant-spin-dot-item {
+  background-color: #00acb1;
+  color: #00acb1;
+}
