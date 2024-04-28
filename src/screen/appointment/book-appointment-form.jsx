@@ -12,7 +12,6 @@ import {
   sessionTypeList,
 } from "../../feature/appointment/constant";
 import { Button, Checkbox, Steps, message } from "antd";
-import { DevTool } from "@hookform/devtools";
 import InputController from "../../components/form-controllers/input-controller";
 import TextAreaInputController from "../../components/form-controllers/text-area-input-controller";
 import ItemSelectController from "../../components/form-controllers/item-select-controller";
@@ -156,8 +155,6 @@ const CreateAppointment = () => {
             Previous
           </Button>
         )}
-        {/* <DevTool control={aboutPersonControl} /> */}
-        <DevTool control={aboutSessionControl} />
       </div>
     </div>
   );
@@ -252,7 +249,6 @@ const AboutSession = ({
           </div>
           <div className="flex mt-2 gap-4">
             <Checkbox
-  
               checked={sessionRecommended.yes}
               onChange={() => recommendedSessionHandler("yes")}
             >
