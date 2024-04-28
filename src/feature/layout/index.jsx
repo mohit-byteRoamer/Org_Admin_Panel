@@ -11,6 +11,7 @@ import OnGoingAppointment from "../../screen/appointment/onGoing-appointment";
 import CreateAppointment from "../../screen/appointment/book-appointment-form";
 import CompletedAppointments from "../../screen/appointment/completed-appointments";
 import Payment from "../../screen/payment/payment-list";
+import Dashboard from "../../screen/dashboard";
 
 const { Header, Content, Sider } = Layout;
 
@@ -82,7 +83,7 @@ const AppLayout = () => {
           <div className="container w-full h-full">
             <Routes>
               <Route path="/" element={<CreateAppointment />} />
-              <Route path="/dashboard" element={<div>Dashboard Page</div>} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/onGoing-session" element={<OnGoingAppointment />} />
               <Route
                 path="/completed-appointments"
