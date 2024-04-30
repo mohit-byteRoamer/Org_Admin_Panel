@@ -41,6 +41,7 @@ const OnGoingAppointment = () => {
             setIsViewSessionInfo(true);
           },
         })}
+        className="w-auto"
       />
       <OnGoingSessionInfo
         id={selectedListItemId}

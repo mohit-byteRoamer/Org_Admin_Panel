@@ -49,16 +49,17 @@ const OnGoingSessionInfo = ({ open, setOpen, id }) => {
     <>
       <Drawer
         title={"On Going Session Detail"}
-        width={"65%"}
+        width={"70%"}
         placement="right"
         closable={false}
         onClose={onClose}
         open={open}
+        // className="w-4/5"
       >
         {isLoading ? (
           <Loader />
         ) : (
-          <div>
+          <div className="w-auto">
             <Section
               SectionName={"Patient Detail"}
               content={<PatientInformation {...patient_info} />}
@@ -108,7 +109,7 @@ const OnGoingSessionInfo = ({ open, setOpen, id }) => {
 export default OnGoingSessionInfo;
 
 const Section = ({ SectionName, content }) => (
-  <div>
+  <div className="w-full">
     <div className="text-sm mb-2 font-semibold">{SectionName}</div>
     <div className="border border-gray-300 p-2 rounded-md">{content}</div>
   </div>
@@ -122,15 +123,15 @@ const SectionItemBox = ({ title, data }) => (
 );
 
 const PatientInformation = ({ name, gender, phone, email, pId }) => (
-  <>
+  <div>
     <div className="text-3xl mb-3 font-normal">{name}</div>
-    <div className="flex gap-4 ">
+    <div className="flex  gap-4 flex-wrap">
       <SectionItemBox title={"Patient ID"} data={pId} />
       <SectionItemBox title={"Phone Number"} data={phone} />
       <SectionItemBox title={"Email"} data={email} />
       <SectionItemBox title={"Gender"} data={gender} />
     </div>
-  </>
+  </div>
 );
 
 const AppointmentDetail = ({
@@ -146,7 +147,7 @@ const AppointmentDetail = ({
 }) => (
   <>
     <div className="flex flex-col flex-wrap gap-4 ">
-      <div className="flex gap-5">
+      <div className="flex gap-5 flex-wrap">
         <SectionItemBox title={"Day"} data={formatDate(day)} />
         <SectionItemBox title={"Time"} data={formatTimeTo12Hour(time)} />
         <SectionItemBox title={"Status"} data={status} />
@@ -156,7 +157,7 @@ const AppointmentDetail = ({
       <div>
         <div className="p-2">
           <div className="text-sm font-semibold">{"Issues"}</div>
-          <div className="flex gap-3 mt-1">
+          <div className="flex gap-3 mt-1 flex-wrap">
             {issues?.map((text) => (
               <div className="text-sm font-normal p-1.5 rounded-md border ">
                 {text}
@@ -165,7 +166,7 @@ const AppointmentDetail = ({
           </div>
         </div>
       </div>
-      <div className="flex gap-5">
+      <div className="flex gap-5 flex-wrap">
         <SectionItemBox title={"Recurrence Type"} data={recurrenceType} />
         <SectionItemBox title={"Voice of Patient"} data={vop} />
         <SectionItemBox
@@ -190,7 +191,7 @@ const CurrentSessionInfo = ({
 }) => (
   <>
     <div className="flex flex-col flex-wrap gap-4 ">
-      <div className="flex gap-5">
+      <div className="flex gap-5 flex-wrap">
         <SectionItemBox title={"Start From"} data={formatDate(fromDate)} />
         <SectionItemBox title={"Time"} data={formatTimeTo12Hour(time)} />
         <SectionItemBox
@@ -203,7 +204,7 @@ const CurrentSessionInfo = ({
       </div>
       <div>
         <div className="text-sm font-semibold">{"Payment Details"}</div>
-        <div className="flex gap-5">
+        <div className="flex gap-5 flex-wrap">
           <SectionItemBox title={"Payment Mode"} data={payment_info.mode} />
           <SectionItemBox title={"Amount"} data={payment_info.amount} />
           <SectionItemBox title={"Bank Name"} data={payment_info.bank} />

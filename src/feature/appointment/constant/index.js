@@ -324,6 +324,8 @@ const tableListColumns = [
     dataIndex: "time",
     key: "time",
     render: (time) => <div>{formatTimeTo12Hour(time)}</div>,
+    responsive: ['lg'],
+
   },
   {
     title: "Issues",
@@ -355,6 +357,7 @@ const tableListColumns = [
         </div>
       );
     },
+    responsive: ['lg'],
   },
   {
     title: "Status",

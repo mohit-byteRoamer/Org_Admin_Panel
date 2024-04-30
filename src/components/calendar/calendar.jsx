@@ -29,7 +29,7 @@ const Calender = ({ data, itemAction }) => {
       <div className="h-full w-full overflow-hidden" onClick={matchDate && itemAction}>
         {matchDate && (
           <div
-            className={`text-xs ${
+            className={`md:text-xs sm:text-[7px] flex justify-center items-center px-1 ${
               getStatusColors(matchDate?.status)?.textColor
             } ${
               getStatusColors(matchDate?.status)?.bgColor

@@ -54,7 +54,15 @@ const AppLayout = () => {
         minHeight: "100vh",
       }}
     >
-      <Sider width={230} theme="light">
+      <Sider
+        width={230}
+        theme="light"
+        title="mohti"
+        className="custom-sider"
+        breakpoint="lg" // Set the breakpoint to trigger responsive behavior
+        collapsedWidth="0" // Specify the collapsed width when the sidebar is collapsed
+        collapsible // Enable collapsible behavior
+      >
         <div className="text-primary-color tracking-widest text-2xl font-extrabold mt-4 mb-4">
           Fornax
         </div>
@@ -80,7 +88,7 @@ const AppLayout = () => {
             margin: "0 16px",
           }}
         >
-          <div className="container w-full h-full">
+          <div className="container w-full overflow-hidden h-full">
             <Routes>
               <Route path="/" element={<CreateAppointment />} />
               <Route path="/dashboard" element={<Dashboard />} />

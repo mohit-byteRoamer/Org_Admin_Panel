@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { bookAppointmentSchema } from "../../feature/appointment/schema/book-appointment-schema";
 import { useMutation } from "react-query";
@@ -20,6 +20,7 @@ import TimePickerController from "../../components/form-controllers/time-picker-
 import { useForm } from "react-hook-form";
 import { bookAppointment } from "../../feature/appointment/api";
 import { navigate } from "../../utils/common-function";
+import axios from "axios";
 
 let aboutPersonData = undefined;
 const CreateAppointment = () => {
@@ -123,8 +124,12 @@ const CreateAppointment = () => {
 
   return (
     <div className="bg-white rounded-lg mt-6 p-6">
-      <div className="w-30%">
-        <Steps current={current} items={items} />
+      <div className="w-[45%]">
+        <Steps
+          current={current}
+          items={items}
+          className=""
+        />
       </div>
       <div>{steps[current].content}</div>
       <div className="mt-12 flex justify-end">
