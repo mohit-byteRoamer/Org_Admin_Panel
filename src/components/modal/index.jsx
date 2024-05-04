@@ -1,32 +1,23 @@
 import React from "react";
 import { Modal } from "antd";
+import AppButton from "../button/button";
 
 const CustomModal = ({
+  modalTItle,
   isModalOpen = false,
-  setIsModalOpen,
-  haveOk,
-  haveCancel,
+  closable = false,
+  footer,
+  ModalContent,
 }) => {
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
   return (
     <>
       <Modal
-        title="Basic Modal"
+        title={modalTItle}
         open={isModalOpen}
-        // onOk={false}
-        // onCancel={handleCancel}
+        closable={closable}
+        footer={footer}
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        {ModalContent}
       </Modal>
     </>
   );

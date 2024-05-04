@@ -11,3 +11,15 @@ export const paymentListAPI = (data) => {
     data: payload,
   });
 };
+
+export const paymentDetailsAPI = (data) => {
+  const payload = {
+    id: data.id,
+  };
+  data.onLoad(true);
+  return makeRequest({
+    method: "post",
+    url: "/outlet/payment-details",
+    data: payload,
+  });
+};
