@@ -168,7 +168,7 @@ const PaymentModal = ({ id }) => {
           <div>
             <div className="flex-grow border rounded-lg p-2">
               <div className="text-center text-base font-semibold">
-                Payment From
+                Payment
               </div>
               <div className="flex mt-3 flex-col gap-2">
                 <PaymentInfoItem title={"Payment Amount"} data={"500"} />
