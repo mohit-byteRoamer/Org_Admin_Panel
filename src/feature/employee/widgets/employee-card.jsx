@@ -13,7 +13,7 @@ const EmployeeCard = ({
 }) => (
   <div
     key={id}
-    onClick={() => navigate("")}
+    onClick={() => navigate("employee-detail")}
     className="flex shadow-md cursor-pointer flex-col border rounded-lg border-gray-300 p-2"
   >
     <div className="flex items-center gap-4">

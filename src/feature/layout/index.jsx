@@ -102,7 +102,7 @@ const AppLayout = () => {
                 element={<CompletedAppointments />}
               />
               <Route path="/payments" element={<Payment />} />
-              <Route path="/employee" element={<EmployeeDetail />} />
+              <Route path="/employee" element={<Employee />} />
               <Route path="/employee-detail" element={<EmployeeDetail />} />
             </Routes>
           </div>
