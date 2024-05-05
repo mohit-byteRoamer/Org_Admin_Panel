@@ -32,6 +32,7 @@ const OnGoingAppointment = () => {
     <div>
       <HeaderSection />
       <Table
+       scroll={{ x: true }}
         columns={tableListColumns}
         dataSource={onGoingSessionList}
         loading={isLoading}
