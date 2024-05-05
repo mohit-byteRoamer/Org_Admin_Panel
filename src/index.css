@@ -125,10 +125,18 @@ a:hover {
   background-color: #e6f8fa !important; /* Use !important to ensure style priority */
 }
 
-.ant-spin{
+.ant-spin {
   color: #00acb1;
 }
 .ant-spin .ant-spin-dot-item {
   background-color: #00acb1;
   color: #00acb1;
+}
+
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #00acb1;
+}
+
+.ant-steps .ant-steps-item-process .ant-steps-item-icon >.ant-steps-icon .ant-steps-icon-dot{
+  background-color: #00acb1;
 }

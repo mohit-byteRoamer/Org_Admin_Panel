@@ -3,6 +3,7 @@ import {
   HomeFilled,
   CalendarFilled,
   MoneyCollectFilled,
+  TeamOutlined,
 } from "@ant-design/icons";
 import { Routes, Route } from "react-router-dom";
 import { Layout, Menu, theme } from "antd";
@@ -12,6 +13,8 @@ import CreateAppointment from "../../screen/appointment/book-appointment-form";
 import CompletedAppointments from "../../screen/appointment/completed-appointments";
 import Payment from "../../screen/payment/payment-list";
 import Dashboard from "../../screen/dashboard";
+import Employee from "../../screen/employee";
+import EmployeeDetail from "../../screen/employee/employee-detail";
 
 const { Header, Content, Sider } = Layout;
 
@@ -42,6 +45,7 @@ const items = [
   getItem("Payments", "3", <MoneyCollectFilled />, null, () =>
     navigate("payments")
   ),
+  getItem("Employee", "4", <TeamOutlined />, null, () => navigate("employee")),
 ];
 
 const AppLayout = () => {
@@ -63,7 +67,7 @@ const AppLayout = () => {
         collapsedWidth="0" // Specify the collapsed width when the sidebar is collapsed
         collapsible // Enable collapsible behavior
       >
-        <div className="text-primary-color tracking-widest text-2xl font-extrabold mt-4 mb-4">
+        <div className="text-primary-color text-center tracking-widest text-2xl font-extrabold mt-4 mb-4">
           Fornax
         </div>
         <Menu
@@ -98,6 +102,8 @@ const AppLayout = () => {
                 element={<CompletedAppointments />}
               />
               <Route path="/payments" element={<Payment />} />
+              <Route path="/employee" element={<EmployeeDetail />} />
+              <Route path="/employee-detail" element={<EmployeeDetail />} />
             </Routes>
           </div>
         </Content>
