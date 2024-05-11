@@ -44,7 +44,7 @@ const items = [
   ),
 ];
 
-const AppLayout = () => {
+const MainLayout = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -105,4 +105,4 @@ const AppLayout = () => {
     </Layout>
   );
 };
-export default AppLayout;
+export default MainLayout;
