@@ -3,7 +3,6 @@ import {
   HomeFilled,
   CalendarFilled,
   MoneyCollectFilled,
-  TeamOutlined,
 } from "@ant-design/icons";
 import { Routes, Route } from "react-router-dom";
 import { Layout, Menu, theme } from "antd";
@@ -13,8 +12,6 @@ import CreateAppointment from "../../screen/appointment/book-appointment-form";
 import CompletedAppointments from "../../screen/appointment/completed-appointments";
 import Payment from "../../screen/payment/payment-list";
 import Dashboard from "../../screen/dashboard";
-import Employee from "../../screen/employee";
-import EmployeeDetail from "../../screen/employee/employee-detail";
 
 const { Header, Content, Sider } = Layout;
 
