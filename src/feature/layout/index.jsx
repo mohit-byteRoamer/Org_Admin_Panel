@@ -45,7 +45,6 @@ const items = [
   getItem("Payments", "3", <MoneyCollectFilled />, null, () =>
     navigate("payments")
   ),
-  getItem("Employee", "4", <TeamOutlined />, null, () => navigate("employee")),
 ];
 
 const AppLayout = () => {
@@ -102,8 +101,6 @@ const AppLayout = () => {
                 element={<CompletedAppointments />}
               />
               <Route path="/payments" element={<Payment />} />
-              <Route path="/employee" element={<Employee />} />
-              <Route path="/employee-detail" element={<EmployeeDetail />} />
             </Routes>
           </div>
         </Content>
