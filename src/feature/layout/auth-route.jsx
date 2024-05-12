@@ -4,6 +4,8 @@ import { Layout } from "antd";
 
 import SignIn from "../../screen/auth/sign-in";
 import SignUp from "../../screen/auth/sign-up";
+import VerifyOTP from "../../screen/auth/verify-otp";
+import Registration from "../../screen/auth/registration";
 
 const AuthLayout = () => {
   return (
@@ -16,6 +18,8 @@ const AuthLayout = () => {
         <Routes>
           <Route path="/" element={<SignIn />} />
           <Route path="/signUp" element={<SignUp />} />
+          <Route path="/verifyOTP" element={<VerifyOTP />} />
+          <Route path="/registration" element={<Registration />} />
         </Routes>
       </div>
     </Layout>

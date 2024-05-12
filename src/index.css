@@ -140,3 +140,10 @@ a:hover {
 .ant-steps .ant-steps-item-process .ant-steps-item-icon >.ant-steps-icon .ant-steps-icon-dot{
   background-color: #00acb1;
 }
+
+.ant-otp {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  column-gap: 35px;
+}

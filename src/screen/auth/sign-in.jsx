@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SignInSchema } from "../../feature/auth/schema/sign-in";
+import { SignInSchema } from "../../feature/auth/schema";
 import InputController from "../../components/form-controllers/input-controller";
 import FormError from "../../components/input/form-error";
 import CheckBoxController from "../../components/form-controllers/check-box-controller";
