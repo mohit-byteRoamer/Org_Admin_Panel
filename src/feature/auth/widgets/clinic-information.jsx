@@ -4,6 +4,8 @@ import ItemSelectController from "../../../components/form-controllers/item-sele
 import TextAreaInputController from "../../../components/form-controllers/text-area-input-controller";
 import FileUpload from "../../../components/upload-file";
 import { genderList, issuesList } from "../../appointment/constant";
+import { establishedYear } from "../constant";
+import { servicesList } from "../../../constants";
 
 const ClinicInformation = ({ control, errors }) => {
   const [profile, setProfile] = useState();
@@ -60,7 +62,7 @@ const ClinicInformation = ({ control, errors }) => {
             label={"Established Year"}
             placeholder={"Established Year"}
             errors={errors}
-            options={genderList}
+            options={establishedYear}
           />
           <InputController
             control={control}
@@ -86,7 +88,7 @@ const ClinicInformation = ({ control, errors }) => {
             label={"Service"}
             placeholder={"Service"}
             errors={errors}
-            options={issuesList}
+            options={servicesList}
           />
         </div>
         <div className="w-full">
@@ -96,7 +98,6 @@ const ClinicInformation = ({ control, errors }) => {
             label={"Website"}
             placeholder={"Website"}
             errors={errors}
-            type={"number"}
           />
         </div>
       </div>

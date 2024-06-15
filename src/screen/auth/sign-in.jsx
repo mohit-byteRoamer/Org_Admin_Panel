@@ -9,12 +9,14 @@ import FormError from "../../components/input/form-error";
 import CheckBoxController from "../../components/form-controllers/check-box-controller";
 import { useMutation } from "react-query";
 import { loginAPI } from "../../feature/auth/api";
+import { navigate } from "../../utils/common-function";
+import { useAuth } from "../../feature/auth/context/auth-context";
 
 let SignIn = () => {
   const [isDoctor, setIsDoctor] = useState(false);
   const [isPhysiotherapy, setIsPhysiotherapy] = useState(false);
   const [submitLoader, setSubmitLoader] = useState(false);
-
+  const { isAuthenticated, login } = useAuth();
   const {
     control,
     handleSubmit,
@@ -23,12 +25,12 @@ let SignIn = () => {
     resolver: zodResolver(SignInSchema),
   });
 
-  const loginMutation = useMutation({
-    mutationFn: async (data) => {
+  const loginMutation = useMutation(
+    async (data) => {
       try {
         setSubmitLoader(true);
-        const response = await loginAPI(data); // Wait for loginAPI call to complete
-        return response;
+        const response = await loginAPI(data);
+        return response; // Ensure response is returned here
       } catch (error) {
         console.error("Mutation error:", error);
         throw error;
@@ -36,20 +38,26 @@ let SignIn = () => {
         setSubmitLoader(false);
       }
     },
-    onSuccess: (data) => {
-      // navigate("onGoing-session");
-      message.success("Login Successfully");
-    },
-    onError: (error) => {
-      // Handle error from the mutation
-      console.error("Mutation error:", error);
-      // Additional error handling (e.g., display error message)
-    },
-  });
+    {
+      onSuccess: async (data) => {
+        const { status, result } = data;
+        if (status == 1) {
+          login(result?.data?.authToken); // Ensure login function is correctly defined and accessible
+          message.success("Login Successfully");
+        } else if (status == 0) {
+          message.success(result.msg);
+        }
+      },
+      onError: (error) => {
+        console.error("Error during mutation:", error);
+        message.error("Login failed. Please try again.");
+      },
+    }
+  );
   const SignInHandler = (data) => {
+    console.log("SignInHandler");
     const payload = { ...data, deviceType: "web" };
     loginMutation.mutate(payload);
-    console.log(data, "SignInHandler");
   };
 
   return (
@@ -76,7 +84,7 @@ let SignIn = () => {
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form className="space-y-6">
           <div className="flex flex-col gap-x-3">
             <label
               htmlFor="first-name"

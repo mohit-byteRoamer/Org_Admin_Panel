@@ -1,4 +1,5 @@
-import { localDataManagerConst } from "@/constants";
+import { localDataManagerConst } from "../../constants";
+
 
 const LocalDataManager = {
   setAccessToken(token) {

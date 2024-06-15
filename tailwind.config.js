@@ -17,10 +17,7 @@ module.exports = {
         "primary-color": "#00acb1",
         "light-primary": "#b3e6e8",
       },
-      backgroundColor: {
-        "primary-color": "#00acb1",
-        "light-primary": "#b3e6e8",
-      },
+   
       colors: {
         "primary-color": "#00acb1",
         "light-primary": "#b3e6e8",

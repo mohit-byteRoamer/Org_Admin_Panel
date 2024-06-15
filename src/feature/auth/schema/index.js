@@ -53,7 +53,7 @@ const registration = {
     service: z
       .array(
         z.object({
-          id: z.number(),
+          id: z.string(),
           value: z.string(),
           label: z.string(),
         })

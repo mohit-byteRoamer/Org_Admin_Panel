@@ -2,6 +2,7 @@ import { statusCodes } from "../../constants/validations";
 import APIKit from "./APIKit";
 
 export const handleResponse = (response) => {
+  console.log("handleResponse");
   if (response.status >= 200 && response.status < 400) {
     return {
       status: statusCodes.Success,

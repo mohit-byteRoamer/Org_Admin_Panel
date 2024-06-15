@@ -14,6 +14,7 @@ const AppButton = ({
     disabled={disabled}
     type="primary"
     size={size}
+   
     icon={icon}
     loading={loading}
     onClick={onClick}

@@ -2,71 +2,58 @@ import InputController from "../../../components/form-controllers/input-controll
 import ItemSelectController from "../../../components/form-controllers/item-select-controller";
 import TextAreaInputController from "../../../components/form-controllers/text-area-input-controller";
 import { genderList, issuesList } from "../../appointment/constant";
+import { district, locality, states } from "../constant";
 
 const LocationDetails = ({ control, errors }) => {
   return (
-    <div className="flex justify-center mt-6">
-      <div className="text-red-500">mohit</div>
-      <div className="w-4/5 flex flex-col gap-4">
-        <div className="w-full grid grid-cols-3 gap-4">
-          <InputController
-            control={control}
-            name={"pName"}
-            label={"Name"}
-            placeholder={"Name"}
-            errors={errors}
-          />
-          <ItemSelectController
-            control={control}
-            mode="single"
-            name={"gender"}
-            label={"Gender"}
-            placeholder={"Gender"}
-            errors={errors}
-            options={genderList}
-          />
-          <InputController
-            control={control}
-            name={"phone"}
-            label={"Phone number"}
-            placeholder={"Phone number"}
-            errors={errors}
-            type={"number"}
-          />
-        </div>
-        <div className="w-full grid grid-cols-3 gap-4">
-          <InputController
-            control={control}
-            name={"email"}
-            label={"Email Address"}
-            placeholder={"Email Address"}
-            errors={errors}
-          />
-          <ItemSelectController
-            control={control}
-            name={"issues"}
-            label={"Issues"}
-            placeholder={"Issues"}
-            errors={errors}
-            options={issuesList}
-          />
-        </div>
-        <div className="w-full grid grid-cols-2 gap-4">
-          <TextAreaInputController
-            control={control}
-            name={"vop"}
-            label={"Voice Of Patient"}
-            placeholder={"Voice Of Patient"}
-            errors={errors}
-          />
-          <TextAreaInputController
-            control={control}
-            name={"vot"}
-            label={"Voice Of Therapist"}
-            placeholder={"Voice Of Therapist"}
-            errors={errors}
-          />
-        </div>
+    <div className="flex flex-col gap-4 mt-6">
+      <div className="w-full grid grid-cols-2 gap-4">
+        <ItemSelectController
+          control={control}
+          mode="single"
+          name={"state"}
+          label={"State"}
+          placeholder={"State"}
+          errors={errors}
+          options={states}
+        />
+        <ItemSelectController
+          control={control}
+          mode="single"
+          name={"district"}
+          label={"District"}
+          placeholder={"District"}
+          errors={errors}
+          options={district}
+        />
+      </div>
+      <div className="w-full grid grid-cols-2 gap-4">
+        <ItemSelectController
+          control={control}
+          mode="single"
+          name={"locality"}
+          label={"Locality"}
+          placeholder={"Locality"}
+          errors={errors}
+          options={locality}
+        />
+        <InputController
+          control={control}
+          name={"pinCode"}
+          label={"PinCode"}
+          placeholder={"PinCode"}
+          errors={errors}
+          type="number"
+        />
+      </div>
+      <div>
+        <InputController
+          control={control}
+          name={"fullAddress"}
+          label={"FullAddress"}
+          placeholder={"FullAddress"}
+          errors={errors}
+        />
       </div>
     </div>
   );

@@ -3,14 +3,14 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SignInSchema, SignUpSchema } from "../../feature/auth/schema";
+import { SignUpSchema } from "../../feature/auth/schema";
 import InputController from "../../components/form-controllers/input-controller";
 import FormError from "../../components/input/form-error";
 import CheckBoxController from "../../components/form-controllers/check-box-controller";
 import { useMutation } from "react-query";
-import { loginAPI, signUpApi } from "../../feature/auth/api";
-import { navigate } from "../../utils/common-function";
+import { signUpApi } from "../../feature/auth/api";
 import { APIRequestHandler } from "../../service/axios/api-request-handler";
+import AppButton from "../../components/button/button";
 
 let SignUp = () => {
   const [isDoctor, setIsDoctor] = useState(false);
